@@ -130,3 +130,12 @@ function showDate() {
         nongli: svalue333 + sx22
     };
 };
+
+
+function getNongli(key_word) {
+    var date = showDate();
+    return {
+        title: key_word,
+        description: date.nongli
+    };
+}
