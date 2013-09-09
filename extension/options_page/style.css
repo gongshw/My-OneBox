@@ -1,5 +1,8 @@
 .code {
     width: 100%;
-    height: 300px;
     resize: none;
+}
+
+textarea.code{
+	height: 300px;
 }

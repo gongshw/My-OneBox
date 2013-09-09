@@ -2,26 +2,77 @@
 
 <head>
     <title>配置My One Box</title>
+    <link rel="stylesheet" type="text/css" href="animate.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="hint.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
     <script type="text/javascript" src="../jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../mob_config.js"></script>
 </head>
 
 <body>
-    <h1>在这里配置My One Box扩展</h1>
-    <div>
-        <h2>EXT列表</h2>
-        <ul id="ext_ul"></ul>
-        <button>新建EXT</button>
-    </div>
-    <hr/>
-    <div>
-        <h2 id="currend_ext">选择一个EXT以配置</h2>
-        <div>
-            <button>编辑</button>
-            <button>保存</button>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">在这里配置My One Box扩展</a>
         </div>
-        <textarea class="code" id="script_ta"></textarea>
+    </nav>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-2">
+                <h2>EXT列表</h2>
+                <ul id="ext_ul"></ul>
+                <button class="btn" id="new_ext_btn">新建EXT</button>
+            </div>
+            <div class="col-lg-10">
+                <h2 id="currend_ext">选择一个EXT以配置</h2>
+
+                <div class="hide panel" id="cfg_panel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <div>
+                                    <button class="btn btn-xs">保存</button>
+                                    <button class="btn btn-xs">取消</button>
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <p>触发关键字:</p>
+                                        <input type='text' class="form-control" id="ext_pattern" placeholder="支持正则表达式" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <p>EXT类型:</p>
+                                        <select class="form-control" id="ext_type">
+                                            <option value='local' selected>本地脚本</option>
+                                            <option value='remote'>远程URL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>脚本
+                                    :<span class="hint--left pull-right" data-hint="use var 'key_word' as the key word.">?</span></p>
+                                <textarea id="ext_script" class="code form-control" rows="9"></textarea>
+
+                                <p>URL:</p>
+                                <input class="code form-control" type='text' id="ext_url" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

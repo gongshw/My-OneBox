@@ -10,20 +10,19 @@ $(function() {
                 text: ext_list[index]['name'],
                 id: ext_list[index]['name'],
                 href: '#' + ext_list[index]['name'],
-                'data-index':index
+                'data-index': index
             })));
 
         }
 
         $('#ext_ul a').click(
-
             function(event) {
                 var ext_item = exts[$(this).data('index')];
                 $('#currend_ext').text($(this).text());
-                $('#script_ta').text(ext_item.script);
+                $('#ext_script').text(ext_item.script);
+                $('#ext_pattern').val(ext_item.pattern);
+                $('#cfg_panel').removeClass().addClass('bounceIn animated');
             }
-
-
         );
     });
 
