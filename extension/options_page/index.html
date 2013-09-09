@@ -3,21 +3,27 @@
 <head>
     <title>配置My One Box</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../jquery.js"></script>
+    <script type="text/javascript" src="../mob_config.js"></script>
 </head>
 
 <body>
+    <h1>在这里配置My One Box扩展</h1>
     <div>
-        <h1>在这里配置My One Box扩展</h1>
-        <ul></ul>
+        <h2>EXT列表</h2>
+        <ul id="ext_ul"></ul>
+        <button>新建EXT</button>
     </div>
+    <hr/>
     <div>
+        <h2 id="currend_ext">选择一个EXT以配置</h2>
         <div>
             <button>编辑</button>
             <button>保存</button>
         </div>
-        <textarea class="code"></textarea>
+        <textarea class="code" id="script_ta"></textarea>
     </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

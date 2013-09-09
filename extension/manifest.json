@@ -2,19 +2,33 @@
   "name": "My OneBox",
   "version": "0.1",
   "description": "show my own one box when using google search.",
-  "content_scripts": [{
-    "matches": [
-      "*://www.google.com/*"
-    ],
-    "css": ["box.css"],
-    "js": [
-      "jquery.js",
-      "nongli/nongli.js",
-      "dispatch.js",
-      "one_box.js"
+  "background": {
+    "scripts": [
+      "mob_core.js"
     ]
-  }],
-  "web_accessible_resources": ["jquery-2.0.3.min.map"],
-  "options_page":"options_page/index.html",
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/*"
+      ],
+      "css": [
+        "box.css"
+      ],
+      "js": [
+        "jquery.js",
+        "demo/nongli.js",
+        "demo/eat_what.js",
+        "mob_config.js",
+        "mobdemo.js",
+        "dispatch.js",
+        "one_box.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "jquery-2.0.3.min.map"
+  ],
+  "options_page": "options_page/index.html",
   "manifest_version": 2
 }
