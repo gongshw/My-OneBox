@@ -28,7 +28,10 @@ Local Javascript + Ajax Request
 -------------------------------
 Sometimes you must do something with the help of other web service. For example, show book information when search the ISBN. In this condition, you may need send some request to Google Book API. Similar as pure local js solution, you need write js function with ajax. you need call the following function to show your one box when all request done:
 
-	mob.show(title,description);
+	mob.show({
+		title:"农历",
+		description:"癸巳(蛇)年农历八月初五"
+	});
 
 Remote JSON Api
 ---------------
